@@ -1,0 +1,7 @@
+Prerequisites::
+
+-->Create a telegram bot - Go to https://core.telegram.org/bots/api
+-->Save bot token and bot url 
+-->Replace the variable token in django_telegram_bot/scripts/hexa.py -- line 183 with your bot token
+
+Now for more details open django_telegram_bot/readme.rtf
