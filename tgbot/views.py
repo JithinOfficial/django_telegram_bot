@@ -28,12 +28,7 @@ def home(request):
     ypd.fat_btn_counter=fbc
     ypd.dumb_btn_counter=dbc
     ypd.save()
-    """
-    with open('tempuserstorage.txt') as g:
-        mylist = [tuple(map(str, i.split(','))) for i in g]
-    mylist=list(mylist)
-    a,b,c,d,e=mylist
-    print(a)"""
+   
 
 
     #loading and updating user fields
