@@ -8,7 +8,7 @@ from telegram.ext import (
     ContextTypes,
     ConversationHandler,
 )
-# Import module
+
 import sqlite3
   
 # Connecting to sqlite
@@ -17,7 +17,7 @@ conn = sqlite3.connect('tgbot_button')
 # Creating a cursor object using 
 # the cursor() method
 cursor = conn.cursor()
-#from tgbot.models import Button
+
 
 
 sbc=0
@@ -52,15 +52,8 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
 
 
 async def jokes(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
-    
-    """Send message on `/start`."""
-    # Get user that sent /start and log his name
-    #user = update.message.from_user
-    
-    # Build InlineKeyboard where each button has a displayed text
-    # and a string as callback_data
-    # The keyboard is a list of button rows, where each row is in turn
-    # a list (hence `[[...]]`).
+    """Send a message when the command /jokes is issued."""
+   
     keyboard = [
         [
             InlineKeyboardButton("Stupid Jokes", callback_data="stupid"),
@@ -78,10 +71,7 @@ async def jokes(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
 async def start_over(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
     query = update.callback_query
     await query.answer()
-    # Build InlineKeyboard where each button has a displayed text
-    # and a string as callback_data
-    # The keyboard is a list of button rows, where each row is in turn
-    # a list (hence `[[...]]`).
+    
     keyboard = [
         [
             InlineKeyboardButton("Stupid Jokes", callback_data="stupid"),
@@ -172,7 +162,7 @@ async def end(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
     bttuple=(sbc,fbc,dbc)
     ustuple=[uid,uname,usbc,ufbc,udbc]
     
-    #cursor.execute(''' UPDATE tgbot_button SET stupid_btn_counter=sbc,dumb_btn_counter=dbc,fat_btn_counter=fbc ''')
+    
     f = open("tempdatastorage.txt", "w")
     f.write(str(bttuple))
     f.close()
@@ -190,7 +180,7 @@ async def end(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
 
 def run():
     """Run the bot."""
-    token = '6150422012:AAFixoycshJiSqiBT0d19L1wdsHuBrjheMc'
+    token = 'your bot token here'
     application = Application.builder().token(token).build()
     
 
